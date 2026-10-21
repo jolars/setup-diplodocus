@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.0](https://github.com/jolars/setup-diplodocus/compare/v1.0.0...v1.1.0) (2026-10-21)
+
+### Features
+
+- update diplodocus automatically ([`a300ef3`](https://github.com/jolars/setup-diplodocus/commit/a300ef39a5228b5ff92a975101da8cf2bc2a7cea))
+
 ## [1.0.0](https://github.com/jolars/setup-diplodocus/compare/v0.0.0...v1.0.0) (2026-10-19)
 
 ### Breaking changes
