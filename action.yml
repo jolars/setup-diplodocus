@@ -10,7 +10,7 @@ inputs:
   version:
     description: "Diplodocus version to install: latest or an exact version, with or without v."
     required: false
-    default: "0.5.0"
+    default: "0.6.0"
   cache:
     description: "Cache the installed binary between workflow runs."
     required: false
