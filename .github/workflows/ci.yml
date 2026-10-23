@@ -100,9 +100,16 @@ jobs:
             test "$INSTALLED_VERSION" = "${REQUESTED_VERSION#v}"
           fi
       - name: Check and build a documentation site
+        env:
+          INSTALLED_VERSION: ${{ steps.setup-default.outputs.version || steps.setup.outputs.version }}
         run: |
-          diplodocus check --config fixtures/site/diplodocus.toml
-          diplodocus build --config fixtures/site/diplodocus.toml --output site
+          # Diplodocus 0.6.0 replaced TOML configuration with YAML.
+          case "$INSTALLED_VERSION" in
+            0.[0-5].*) config=fixtures/site/diplodocus.toml ;;
+            *) config=fixtures/site/diplodocus.yaml ;;
+          esac
+          diplodocus check --config "$config"
+          diplodocus build --config "$config" --output site
           test -f site/index.html
 
   all-tests-passed:

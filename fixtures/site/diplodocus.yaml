@@ -1,0 +1,16 @@
+project:
+  name: "Setup Diplodocus"
+
+repositories:
+  - id: "docs"
+    path: "."
+    url: "https://github.com/jolars/setup-diplodocus"
+    revision: "main"
+
+content:
+  - id: "guide"
+    owner: "project"
+    repository: "docs"
+    path: "pages"
+    mount: ""
+    format: "gfm"

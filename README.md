@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: jolars/setup-diplodocus@v1
-      - run: diplodocus build --config documentation/diplodocus.toml
+      - run: diplodocus build --config documentation/diplodocus.yaml
 ```
 
 ### Pin the CLI version
@@ -31,6 +31,8 @@ Pin a full action release or its commit SHA and omit `version` to receive CLI
 upgrades through Dependabot action updates. The action and CLI versions are
 independent. Override the default when needed; both `0.4.0` and `v0.4.0` are
 accepted.
+
+Diplodocus 0.6.0 and newer use YAML configuration; older releases use TOML.
 
 ```yaml
 - uses: jolars/setup-diplodocus@v1
