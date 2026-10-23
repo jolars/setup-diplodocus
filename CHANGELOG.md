@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.2.0](https://github.com/jolars/setup-diplodocus/compare/v1.1.0...v1.2.0) (2026-10-23)
+
+### Features
+
+- default to Diplodocus v0.6.0 (#3) ([`72c6057`](https://github.com/jolars/setup-diplodocus/commit/72c60574803dfb06eb562006cb0f32c015462ef8))
+
 ## [1.1.0](https://github.com/jolars/setup-diplodocus/compare/v1.0.0...v1.1.0) (2026-10-21)
 
 ### Features
