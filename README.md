@@ -26,7 +26,7 @@ jobs:
 
 ### Pin the CLI version
 
-Each action release defaults to an exact Diplodocus version, currently `0.6.0`.
+Each action release defaults to an exact Diplodocus version, currently `0.8.0`.
 Pin a full action release or its commit SHA and omit `version` to receive CLI
 upgrades through Dependabot action updates. The action and CLI versions are
 independent. Override the default when needed; both `0.4.0` and `v0.4.0` are
@@ -70,7 +70,7 @@ guide](https://diplodocus.cc/installation.html) for requirements.
 
   | Input     | Default        | Description                                                                                |
   | --------- | -------------- | ------------------------------------------------------------------------------------------ |
-  | `version` | `0.6.0`        | Diplodocus version: `latest` or an exact version, with or without `v`.                     |
+  | `version` | `0.8.0`        | Diplodocus version: `latest` or an exact version, with or without `v`.                     |
   | `cache`   | `true`         | Cache the installed binary between workflow runs. Set to `false` to download it each time. |
   | `token`   | `github.token` | GitHub token for release lookup and build provenance verification.                         |
 
