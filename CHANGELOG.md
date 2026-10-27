@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.3.0](https://github.com/jolars/setup-diplodocus/compare/v1.2.0...v1.3.0) (2026-10-27)
+
+### Features
+
+- default to Diplodocus v0.8.0 (#6) ([`283448b`](https://github.com/jolars/setup-diplodocus/commit/283448b2e7044ef34329eeca469cd2fa98fd217d))
+
+### Bug Fixes
+
+- mention maintainer in CLI update PRs ([`265040d`](https://github.com/jolars/setup-diplodocus/commit/265040d56441cb3cfd1b1ac7a9dbf73089ed768a))
+
 ## [1.2.0](https://github.com/jolars/setup-diplodocus/compare/v1.1.0...v1.2.0) (2026-10-23)
 
 ### Features
