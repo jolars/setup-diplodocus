@@ -70,7 +70,7 @@ guide](https://diplodocus.cc/installation.html) for requirements.
 
   | Input     | Default        | Description                                                                                |
   | --------- | -------------- | ------------------------------------------------------------------------------------------ |
-  | `version` | `0.10.0`        | Diplodocus version: `latest` or an exact version, with or without `v`.                     |
+  | `version` | `0.10.0`       | Diplodocus version: `latest` or an exact version, with or without `v`.                     |
   | `cache`   | `true`         | Cache the installed binary between workflow runs. Set to `false` to download it each time. |
   | `token`   | `github.token` | GitHub token for release lookup and build provenance verification.                         |
 
