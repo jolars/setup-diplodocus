@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.1](https://github.com/jolars/setup-diplodocus/compare/v1.4.0...v1.4.1) (2026-11-10)
+
+### Bug Fixes
+
+- require complete CLI releases for default updates ([`cb6df17`](https://github.com/jolars/setup-diplodocus/commit/cb6df17d44ace7504323aeee19a0014d49b51d6d)), ref [#12](https://github.com/jolars/setup-diplodocus/issues/12)
+
 ## [1.4.0](https://github.com/jolars/setup-diplodocus/compare/v1.3.0...v1.4.0) (2026-10-28)
 
 ### Features
