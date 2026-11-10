@@ -38,3 +38,46 @@ for (const [release, expected, success] of [
     assert.equal(readFileSync(join(cwd, "README.md"), "utf8"), `Default: \`${expected}\`. Override: \`0.4.0\`.\n`);
   });
 }
+
+const selector = fileURLToPath(new URL("../scripts/select-release.py", import.meta.url));
+const archives = [
+  "x86_64-unknown-linux-gnu.tar.xz",
+  "aarch64-unknown-linux-gnu.tar.xz",
+  "x86_64-apple-darwin.tar.xz",
+  "aarch64-apple-darwin.tar.xz",
+  "x86_64-pc-windows-msvc.zip",
+].map((target) => `diplodocus-${target}`);
+const names = archives.flatMap((archive) => [archive, `${archive}.sha256`]);
+const release = (tag, assets = names, properties = {}) => ({
+  tag_name: tag,
+  draft: false,
+  prerelease: false,
+  assets: assets.map((name) => ({ name })),
+  ...properties,
+});
+const select = (releases) => spawnSync("python3", [selector], {
+  input: JSON.stringify(releases),
+  encoding: "utf8",
+});
+
+test("default selection skips unpublished, unstable, and incomplete releases", () => {
+  const result = select([
+    release("v0.16.0", names, { draft: true }),
+    release("v0.15.0", names, { prerelease: true }),
+    release("v0.14.0-rc.1"),
+    release("v0.13.0", []),
+    release("v0.12.1"),
+    release("v0.12.0"),
+  ]);
+  assert.equal(result.status, 0, result.stderr);
+  assert.equal(result.stdout.trim(), "v0.12.1");
+});
+
+for (const missing of names) {
+  test(`default selection requires ${missing}`, () => {
+    const result = select([release("v0.13.0", names.filter((name) => name !== missing))]);
+    assert.notEqual(result.status, 0);
+    assert.equal(result.stdout, "");
+    assert.match(result.stderr, /No stable Diplodocus release/);
+  });
+}

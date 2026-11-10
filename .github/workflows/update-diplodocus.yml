@@ -29,7 +29,7 @@ jobs:
             echo '::error::Set RELEASE_TOKEN to enable CLI update PRs and their CI checks.'
             exit 1
           fi
-          DIPLODOCUS_RELEASE="$(gh api repos/jolars/diplodocus/releases/latest --jq .tag_name)"
+          DIPLODOCUS_RELEASE="$(gh api 'repos/jolars/diplodocus/releases?per_page=100' | python3 scripts/select-release.py)"
           export DIPLODOCUS_RELEASE
           python3 scripts/update-default.py
           if git diff --quiet; then
