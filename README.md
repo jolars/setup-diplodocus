@@ -44,17 +44,19 @@ An exact version can select a prerelease.
 
 ### Use a prepared Python environment
 
-After your workflow has prepared the project's dependencies, run Diplodocus
-through that environment when extracting APIs or executing Python examples:
+Run Diplodocus in the project's Python environment to extract Python APIs or run
+Python doctests. API extraction requires Python 3.11 or newer and a compatible
+Sphinx version (`>=9.0.4,<10`). This example assumes the project declares Sphinx
+in a `docs` dependency group and includes it in `uv.lock`.
 
 ```yaml
 - uses: jolars/setup-diplodocus@v1
   with:
     version: "0.16.0"
-- run: uv sync --locked --project packages/python
+- run: uv sync --locked --project packages/python --group docs
 - run: >-
-    uv run --no-sync --project packages/python
-    diplodocus build --config documentation/diplodocus.toml
+    uv run --no-sync --project packages/python --group docs
+    diplodocus build --config documentation/diplodocus.yaml
 ```
 
 The workflow must install `uv` before these steps. Prepare R and Julia packages,
