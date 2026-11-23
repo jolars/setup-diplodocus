@@ -50,7 +50,7 @@ through that environment when extracting APIs or executing Python examples:
 ```yaml
 - uses: jolars/setup-diplodocus@v1
   with:
-    version: "0.10.0"
+    version: "0.16.0"
 - run: uv sync --locked --project packages/python
 - run: >-
     uv run --no-sync --project packages/python
