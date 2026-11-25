@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.8.0](https://github.com/jolars/setup-diplodocus/compare/v1.7.0...v1.8.0) (2026-11-25)
+
+### Features
+
+- support Windows ARM64 ([`148a989`](https://github.com/jolars/setup-diplodocus/commit/148a9892355479df2809207179ff675fdd77dbd1))
+
 ## [1.7.0](https://github.com/jolars/setup-diplodocus/compare/v1.6.0...v1.7.0) (2026-11-23)
 
 ### Features
