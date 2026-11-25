@@ -11,6 +11,7 @@ archives = {
         ("x86_64-apple-darwin", "tar.xz"),
         ("aarch64-apple-darwin", "tar.xz"),
         ("x86_64-pc-windows-msvc", "zip"),
+        ("aarch64-pc-windows-msvc", "zip"),
     ]
 }
 required = archives | {f"{archive}.sha256" for archive in archives}

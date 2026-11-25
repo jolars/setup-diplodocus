@@ -96,6 +96,7 @@ const platforms = [
   ["Linux", "ARM64", "aarch64-unknown-linux-gnu", "tar.xz"],
   ["macOS", "X64", "x86_64-apple-darwin", "tar.xz"],
   ["macOS", "ARM64", "aarch64-apple-darwin", "tar.xz"],
+  ["Windows", "ARM64", "aarch64-pc-windows-msvc", "zip"],
   ["Windows", "X64", "x86_64-pc-windows-msvc", "zip"],
 ];
 
@@ -152,7 +153,7 @@ test("invalid versions and unsupported platforms fail before installation", (t) 
     assert.notEqual(result.status, 0, requested);
     assert.match(result.stderr, /version/);
   }
-  const unsupported = shell("resolve-version.sh", { ...env, RUNNER_OS: "Windows", RUNNER_ARCH: "ARM64" });
+  const unsupported = shell("resolve-version.sh", { ...env, RUNNER_OS: "Windows", RUNNER_ARCH: "X86" });
   assert.notEqual(unsupported.status, 0);
   assert.match(unsupported.stderr, /Unsupported Diplodocus platform/);
   assert.equal(existsSync(env.GITHUB_OUTPUT), false);

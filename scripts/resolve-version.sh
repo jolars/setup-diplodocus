@@ -6,6 +6,7 @@ Linux-X64) target="x86_64-unknown-linux-gnu" ;;
 Linux-ARM64) target="aarch64-unknown-linux-gnu" ;;
 macOS-X64) target="x86_64-apple-darwin" ;;
 macOS-ARM64) target="aarch64-apple-darwin" ;;
+Windows-ARM64) target="aarch64-pc-windows-msvc" ;;
 Windows-X64) target="x86_64-pc-windows-msvc" ;;
 *)
 	echo "Unsupported Diplodocus platform: ${RUNNER_OS}-${RUNNER_ARCH}" >&2

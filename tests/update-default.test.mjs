@@ -46,6 +46,7 @@ const archives = [
   "x86_64-apple-darwin.tar.xz",
   "aarch64-apple-darwin.tar.xz",
   "x86_64-pc-windows-msvc.zip",
+  "aarch64-pc-windows-msvc.zip",
 ].map((target) => `diplodocus-${target}`);
 const names = archives.flatMap((archive) => [archive, `${archive}.sha256`]);
 const release = (tag, assets = names, properties = {}) => ({
